@@ -1,0 +1,229 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+ 
+
+  .logo_instituto{
+    width: 200px;
+    height: 150px;
+  }
+  
+  .container_nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(20, 21, 24,0.7);
+    padding-left: 2vw;
+    position: -webkit-sticky; /* Para compatibilidad con Safari */
+  position: sticky;
+  top: 0; /* Fija la barra de navegación en la parte superior de la página */
+  z-index: 1000; /* Asegura que la barra de navegación esté por encima de otros elementos */
+    
+  }
+  
+  .menu-icon {
+    display: none; /* Hides the menu icon by default */
+  }
+  
+  .menu-icon.open .bar:nth-child(2) {
+    opacity: 0; /* Hides the middle bar of the menu icon when open */
+  }
+  
+  .menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-icon .bar:before,
+  .menu-icon .bar:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-icon .bar:before {
+    top: -8px;
+  }
+  
+  .menu-icon .bar:after {
+    bottom: -8px;
+  }
+  
+  .menu-icon.open .bar:first-child:before {
+    transform: translateY(8px) rotate(45deg); /* Rotates the first bar of the menu icon when open */
+  }
+  
+  .menu-icon.open .bar:last-child:after {
+    transform: translateY(-8px) rotate(-45deg); /* Rotates the last bar of the menu icon when open */
+  }
+  
+  .cont-ul {
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  li {
+    cursor: pointer;
+    padding: 1.5vw;
+    transition: all 0.3s ease 0s;
+  }
+  
+  li:hover {
+    background-color: #008849;
+  }
+  
+  .develop {
+    position: relative;
+  }
+  
+  .ul-second {
+    display: none;
+    position: absolute;
+    margin-top: 1.5vw;
+    background-color: #24252a;
+  }
+  
+  .ul-second > li {
+    width: 190px;
+    transform: translateX(-20px);
+    border-bottom: solid 1px #fff;
+    text-align: center;
+  }
+  
+  .ul-second > li:hover {
+    background-color: #008849;
+  }
+  
+  .develop:hover > .ul-second {
+    display: block;
+  }
+  
+  .ul-third {
+    position: absolute;
+    transform: translateX(100%);
+    right: 0;
+    top: 0;
+    display: none;
+    background-color: #24252a;
+  }
+  
+  .ul-third > li {
+    padding: 1.5vw;
+    border-bottom: solid 1px #fff;
+  }
+  
+  .front:hover > .ul-third {
+    display: block;
+  }
+  
+  @media (max-width: 900px) {
+    .menu-icon {
+      display: flex; /* Displays the menu icon on smaller screens */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+     
+       
+    }
+  
+    .cont-ul {
+      display: none; /* Hides the navigation links by default on smaller screens */
+      flex-direction: column;
+      align-items: center;
+      background-color: #24252a;
+      width: 100%;
+      position: absolute;
+      top: 80px; /* Adjust this value according to your design */
+      left: 0;
+      z-index: 1;
+      
+    }
+  
+    .cont-ul.active {
+      display: flex; /* Displays the navigation links when the menu icon is clicked */
+    }
+  
+    .menu-icon.open .bar:nth-child(2) {
+      display: none; /* Hides the middle bar of the menu icon when open */
+    }
+  
+    .menu-icon.open .bar:before,
+    .menu-icon.open .bar:after {
+      display: none; /* Hides the pseudo elements of the bars when menu is open */
+    }
+  
+    .menu-icon.open .bar:first-child:before {
+      transform: translateY(8px) rotate(45deg); /* Rotates the first bar of the menu icon when open */
+    }
+  
+    .menu-icon.open .bar:last-child:after {
+      transform: translateY(-8px) rotate(-45deg); /* Rotates the last bar of the menu icon when open */
+    }
+  
+    li {
+      width: 100%; /* Makes the navigation links full width on smaller screens */
+      text-align: center;
+      padding: 20px 0; /* Adjust this value according to your design */
+      border-bottom: solid 1px #fff;
+    }
+    li {
+      cursor: pointer;
+      padding: 1.5vw;
+      transition: all 0.3s ease 0s;
+    }
+    
+    li:hover {
+      background-color: #008849;
+    }
+    
+  
+    .develop {
+      position: static; /* Changes the position of the "DEVELOPER" dropdown to static */
+    }
+  
+    .ul-second {
+      position: static; /* Changes the position of the second level dropdown to static */
+      display: none; /* Hides the second level dropdown by default on smaller screens */
+      width: 100%; /* Makes the second level dropdown full width on smaller screens */
+      text-align: center;
+    }
+  
+    .ul-third {
+      position: static; /* Changes the position of the third level dropdown to static */
+      display: none; /* Hides the third level dropdown by default on smaller screens */
+      width: 100%; /* Makes the third level dropdown full width on smaller screens */
+      text-align: center;
+    }
+  
+    .front:hover > .ul-third,
+    .ul-second.active {
+      display: block; /* Displays the second and third level dropdowns when hovered */
+    }
+    .svg_icon{
+      cursor: pointer;
+    }
+    .container_nav{
+      height: 80px;
+    }
+    .logo_instituto{
+      width: 100px;
+      height: 80px;
+    }
+  }
+  
